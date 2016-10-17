@@ -12,6 +12,9 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         
+        
+        //// NSDate Declearation
+        
         NSDate *current=[NSDate date];
         
         NSLog(@"%@",current);
@@ -25,7 +28,23 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"Next Weak:%@",nextWeek);
         
-//        te *lastWeek=[NSDate dateWithTimeInterval:secondInWeek sinceDate:current];
+        // Compareing dates
+        
+        NSComparisonResult result = [current compare:nextWeek];
+        if (result == NSOrderedAscending) {
+            NSLog(@"current < nextWeek");
+        } else if (result == NSOrderedSame) {
+            NSLog(@"current == nextWeek");
+        } else if (result == NSOrderedDescending) {
+            NSLog(@"current > nextWeek");
+        }
+        
+        // Directly using methods
+        NSDate *earlierDate = [current earlierDate:lastWeek];
+        NSDate *laterDate = [current laterDate:lastWeek];
+        NSLog(@"%@ is earlier than %@", earlierDate, laterDate);
+        
+        
     }
     return 0;
 }
