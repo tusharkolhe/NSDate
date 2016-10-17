@@ -60,9 +60,22 @@ int main(int argc, const char * argv[]) {
 //        hour      weekOfMonth
 //        minute 	weekOfYear
 //        second 	yearForWeekOfYear
-//
-    
-    
-    }
+        
+        
+        
+        // Use of NSDateFormatter
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];//we can set short/no/medium/long fotmet fot this style and same for time
+        [formatter setTimeStyle:NSDateFormatterMediumStyle];
+        
+        NSDate *now = [NSDate date];
+        NSString *formatedDate = [formatter stringFromDate:now];
+        NSLog(@"%@", formatedDate);
+        
+        
+        
+        
+            }
     return 0;
 }
