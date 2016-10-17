@@ -44,7 +44,25 @@ int main(int argc, const char * argv[]) {
         NSDate *laterDate = [current laterDate:lastWeek];
         NSLog(@"%@ is earlier than %@", earlierDate, laterDate);
         
+        // NSDate Components
+        NSDateComponents *november10th2016 = [[NSDateComponents alloc] init];
+        [november10th2016 setYear:2016];
+        [november10th2016 setMonth:11];
+        [november10th2016 setDay:10];
+        NSLog(@"%@", november10th2016);
+    
         
+        // We can set following components too.
+//        era   	week
+//        year      weekday
+//        month 	weekdayOrdinal
+//        day       quarter
+//        hour      weekOfMonth
+//        minute 	weekOfYear
+//        second 	yearForWeekOfYear
+//
+    
+    
     }
     return 0;
 }
